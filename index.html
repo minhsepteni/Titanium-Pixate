@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Titanium-Pixate : " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Titanium-Pixate</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Pixate/Titanium-Pixate">View on GitHub</a>
+
+          <h1 id="project_title">Titanium-Pixate</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Pixate/Titanium-Pixate/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Pixate/Titanium-Pixate/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Titanium-Pixate Module v1.0.3</h1>
+
+<h2>Requirements</h2>
+
+<p>The Titanium-Pixate module is included with the Pixate Engine distribution and requires <strong>Titanium 3.0.0.GA</strong> or greater.</p>
+
+<h2>Installing the Module</h2>
+
+<p>Unzip the module into your project's modules directory or install it globally. See <a href="https://wiki.appcelerator.org/display/tis/Using+Titanium+Modules">Using Titanium Modules</a> for information on how to install the module globally.</p>
+
+<h2>Configuting <strong>tiapp.xml</strong>
+</h2>
+
+<p>You can use the Ti Studio interface to add the Pixate Engine module into your project, or just edit the tiapp.xml file directly and add this to your  section:</p>
+
+<pre><code>&lt;module platform="iphone"&gt;com.pixate.pxengine&lt;/module&gt;
+</code></pre>
+
+<h2>Adding Pixate Engine Runtime &amp; License Properties</h2>
+
+<p>If you are using the <strong>Non-Commercial</strong> version of Pixate Engine, add the following to your <strong>tiapp.xml</strong> file anywhere as a child of the root node:</p>
+
+<pre><code>&lt;ios&gt;
+    &lt;plist&gt;
+        &lt;dict&gt;
+            &lt;key&gt;PXTitanium&lt;/key&gt;
+            &lt;true/&gt;
+        &lt;/dict&gt;
+    &lt;/plist&gt;
+&lt;/ios&gt;
+</code></pre>
+
+<p>If you have a license <strong>username</strong> and <strong>key</strong>, then you'll need two additional entries as follows:</p>
+
+<pre><code>&lt;ios&gt;
+    &lt;plist&gt;
+        &lt;dict&gt;
+            &lt;key&gt;PXTitanium&lt;/key&gt;
+            &lt;true/&gt;
+            &lt;key&gt;PXuser&lt;/key&gt;
+            &lt;string&gt;LICENSE USERNAME&lt;/string&gt;
+            &lt;key&gt;PXkey&lt;/key&gt;
+            &lt;string&gt;LICENSE KEY&lt;/string&gt;
+        &lt;/dict&gt;
+    &lt;/plist&gt;
+&lt;/ios&gt;
+</code></pre>
+
+<p>Be sure to substitute <strong>LICENSE USERNAME</strong> and <strong>LICENSE KEY</strong> with the information you received from the Pixate store.</p>
+
+<h2>Styling your Controls</h2>
+
+<p>When creating a control, just use <strong>styleId</strong>, <strong>styleClass</strong>, and/or <strong>styleCSS</strong>. For example:</p>
+
+<pre><code>var label = Ti.UI.createLabel({
+    text:String.format(L('welcome'),'Titanium'),
+    height:'auto',
+    width:'auto',
+    styleCSS:'background-color: blue; color:white;'
+});
+self.add(label);
+
+var button1 = Titanium.UI.createButton({
+    title:'I am a Button 1',
+    width:200,
+    height:40,
+    top:60,
+    styleId:'myButton',
+    styleClass:'myButtons'
+});
+self.add(button1);
+
+var button2 = Titanium.UI.createButton({
+    title:'I am a Button 2',
+    width:200,
+    height:40,
+    top:110,
+    styleId:'myButton2',
+    styleClass:'myButtons'
+});
+self.add(button2);
+</code></pre>
+
+<p>If using Alloy, just set <strong>styleId</strong>, <strong>styleClass</strong>, and/or <strong>styleCSS</strong> (yes, you can inline CSS) in your XML:</p>
+
+<pre><code>&lt;Alloy&gt; 
+    &lt;Window class="container"&gt; 
+        &lt;Label id="label" styleId="myLabel" onClick="doClick"&gt;Hello, World&lt;/Label&gt; 
+        &lt;Button id="button" styleCSS='background-color: blue; color: white;' onClick="doClick"&gt;Click Me&lt;/Button&gt;
+    &lt;/Window&gt; 
+&lt;/Alloy&gt;
+</code></pre>
+
+<h2>CSS</h2>
+
+<p>Add a <strong>default.css</strong> file into your project's <strong>Resources</strong> folder. For Alloy users, add the file directly inside your <strong>assets</strong> folder. Here's an example CSS file:</p>
+
+<pre><code>#myLabel {
+ color: blue;
+ background-color: linear-gradient(gray,yellow);
+}
+
+#myButton {
+  background-color: linear-gradient(red,green);
+  border-radius: 20;
+  color: white;
+}
+
+#myButton2 {
+  background-color: linear-gradient(red,white);
+  border-radius: 20;
+  color: white;
+}
+
+#myButton2:highlighted {
+  background-color: linear-gradient(blue,yellow);
+  border-radius: 20;
+  color: red;
+}
+</code></pre>
+
+<h2>Alloy Users</h2>
+
+<p>You can use your <strong>.tss</strong> files to layout your controls, or you can use just the <strong>.css</strong> files to do so. If using <strong>.css</strong> for layout, your <strong>.tss</strong> file needs to either <strong>not</strong> set the layout property or set it to <strong>absolute</strong>.</p>
+
+<pre><code>".container": {
+    layout: 'absolute'
+}
+</code></pre>
+
+<p>Here's a sample .xml file:</p>
+
+<pre><code>&lt;Alloy&gt;
+    &lt;Window class="container" styleId='container'&gt;
+        &lt;Label id="label" styleId='myLabel' onClick="doClick"&gt;Hello, World&lt;/Label&gt;
+        &lt;Button id="button" styleId='myButton' onClick="doClick"&gt;Click Me&lt;/Button&gt;
+    &lt;/Window&gt;
+&lt;/Alloy&gt;
+</code></pre>
+
+<p>With it's accompanying .css file:</p>
+
+<pre><code>#container {
+    background-color: linear-gradient(black,white);
+}
+
+#myLabel {
+    color: blue;
+    background-color: yellow;
+    position: 0 200;
+    size: 100;
+}
+
+#myButton {
+    position: 0 100;
+    size: 100 50;
+    color: white;
+    border-radius: 10;
+    transform : rotate(45);
+    background-color: linear-gradient(red,blue);
+}
+</code></pre>
+
+<h2>License</h2>
+
+<p>Copyright (c) 2012-2013 Pixate, Inc. All rights reserved.
+This source may be not redistributed or reproduced without the explicit permission of Pixate, Inc.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Titanium-Pixate maintained by <a href="https://github.com/Pixate">Pixate</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
