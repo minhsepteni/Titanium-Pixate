@@ -31,17 +31,21 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>Titanium-Pixate Module v1.0.3</h1>
+        <h1>
+<a name="titanium-pixate-module-v103" class="anchor" href="#titanium-pixate-module-v103"><span class="octicon octicon-link"></span></a>Titanium-Pixate Module v1.0.3</h1>
 
-<h2>Requirements</h2>
+<h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
 
 <p>The Titanium-Pixate module requires <strong>Titanium 3.0.0.GA</strong> or greater.</p>
 
-<h2>Installing the Module</h2>
+<h2>
+<a name="installing-the-module" class="anchor" href="#installing-the-module"><span class="octicon octicon-link"></span></a>Installing the Module</h2>
 
 <p>Unzip the module into your project's modules directory or install it globally. See <a href="https://wiki.appcelerator.org/display/tis/Using+Titanium+Modules">Using Titanium Modules</a> for information on how to install the module globally.</p>
 
-<h2>Configuring <strong>tiapp.xml</strong>
+<h2>
+<a name="configuring-tiappxml" class="anchor" href="#configuring-tiappxml"><span class="octicon octicon-link"></span></a>Configuring <strong>tiapp.xml</strong>
 </h2>
 
 <p>You can use the Ti Studio interface to add the Pixate Engine module into your project, or just edit the tiapp.xml file directly and add this to your  section:</p>
@@ -49,7 +53,8 @@
 <pre><code>&lt;module platform="iphone"&gt;com.pixate.pxengine&lt;/module&gt;
 </code></pre>
 
-<h2>Adding Pixate Engine Runtime &amp; License Properties</h2>
+<h2>
+<a name="adding-pixate-engine-runtime--license-properties" class="anchor" href="#adding-pixate-engine-runtime--license-properties"><span class="octicon octicon-link"></span></a>Adding Pixate Engine Runtime &amp; License Properties</h2>
 
 <p>If you are using the <strong>Non-Commercial</strong> version of Pixate Engine, add the following to your <strong>tiapp.xml</strong> file anywhere as a child of the root node:</p>
 
@@ -81,7 +86,8 @@
 
 <p>Be sure to substitute <strong>LICENSE USERNAME</strong> and <strong>LICENSE KEY</strong> with the information you received from the Pixate store.</p>
 
-<h2>Styling your Controls</h2>
+<h2>
+<a name="styling-your-controls" class="anchor" href="#styling-your-controls"><span class="octicon octicon-link"></span></a>Styling your Controls</h2>
 
 <p>When creating a control, just use <strong>styleId</strong>, <strong>styleClass</strong>, and/or <strong>styleCSS</strong>. For example:</p>
 
@@ -116,15 +122,16 @@ self.add(button2);
 
 <p>If using Alloy, just set <strong>styleId</strong>, <strong>styleClass</strong>, and/or <strong>styleCSS</strong> (yes, you can inline CSS) in your XML:</p>
 
-<pre><code>&lt;Alloy&gt; 
-    &lt;Window class="container"&gt; 
-        &lt;Label id="label" styleId="myLabel" onClick="doClick"&gt;Hello, World&lt;/Label&gt; 
+<pre><code>&lt;Alloy&gt;
+    &lt;Window class="container"&gt;
+        &lt;Label id="label" styleId="myLabel" onClick="doClick"&gt;Hello, World&lt;/Label&gt;
         &lt;Button id="button" styleCSS='background-color: blue; color: white;' onClick="doClick"&gt;Click Me&lt;/Button&gt;
-    &lt;/Window&gt; 
+    &lt;/Window&gt;
 &lt;/Alloy&gt;
 </code></pre>
 
-<h2>CSS</h2>
+<h2>
+<a name="css" class="anchor" href="#css"><span class="octicon octicon-link"></span></a>CSS</h2>
 
 <p>Add a <strong>default.css</strong> file into your project's <strong>Resources</strong> folder. For Alloy users, add the file directly inside your <strong>assets</strong> folder. Here's an example CSS file:</p>
 
@@ -152,7 +159,8 @@ self.add(button2);
 }
 </code></pre>
 
-<h2>Alloy Users</h2>
+<h2>
+<a name="alloy-users" class="anchor" href="#alloy-users"><span class="octicon octicon-link"></span></a>Alloy Users</h2>
 
 <p>You can use your <strong>.tss</strong> files to layout your controls, or you can use just the <strong>.css</strong> files to do so. If using <strong>.css</strong> for layout, your <strong>.tss</strong> file needs to either <strong>not</strong> set the layout property or set it to <strong>absolute</strong>.</p>
 
@@ -194,11 +202,26 @@ self.add(button2);
 }
 </code></pre>
 
-<h2>License</h2>
+<h2>
+<a name="build-instructions" class="anchor" href="#build-instructions"><span class="octicon octicon-link"></span></a>Build Instructions</h2>
 
-<p>The Pixate Engine runtime included here is for demonstrations / trial use only. Please visit <a href="http://www.pixate.com">Pixate.com</a> for licensing information.</p>
+<p>If you'd like to build the module yourself, this is the simple process. After cloning this project, start by creating a symbolic link to the PXEngine file from your Pixate distribution in the PXEngine folder. For example:</p>
 
-<p>License for the included Demos is available in the accompanying <a href="https://github.com/Pixate/Titanium-Pixate/blob/master/LICENSE.md">LICENSE.md</a> file.</p>
+<pre><code>cd PXEngine
+ln -s ~/Desktop/Pixate/Frameworks/PXEngine.framework ./PXEngine.framework
+</code></pre>
+
+<p>Now just run build.py:</p>
+
+<pre><code>./build.py
+</code></pre>
+
+<p>The resulting zip file can found in the PXEngine directory.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>License for the included source is available in the accompanying <a href="https://github.com/Pixate/Titanium-Pixate/blob/master/PXEngine/LICENSE">LICENSE</a> file.</p>
       </section>
     </div>
 
