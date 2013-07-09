@@ -218,7 +218,13 @@ ln -s ~/Desktop/Pixate/Frameworks/PXEngine.framework ./PXEngine.framework
 
 <p>The resulting zip file can found in the PXEngine directory.</p>
 
-<h2>
+<h3>
+<a name="common-build-errors" class="anchor" href="#common-build-errors"><span class="octicon octicon-link"></span></a>Common Build errors</h3>
+
+<ul>
+<li>If you see an error that 'PXEngine/PXEngine.h' could not be found, then you may be missing the symbolic link to PXEngine.framework or it may be pointing to an invalid location. This will also show as an error coming from CompileC</li>
+<li>If you see an error about a missing "tools" module, then your TITANIUM_SDK environment variable may not be pointing to your Titanium installation.</li>
+</ul><h2>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>License for the included source is available in the accompanying <a href="https://github.com/Pixate/Titanium-Pixate/blob/master/PXEngine/LICENSE">LICENSE</a> file.</p>
