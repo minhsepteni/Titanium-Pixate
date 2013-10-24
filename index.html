@@ -48,27 +48,15 @@
 <a name="configuring-tiappxml" class="anchor" href="#configuring-tiappxml"><span class="octicon octicon-link"></span></a>Configuring <strong>tiapp.xml</strong>
 </h2>
 
-<p>You can use the Ti Studio interface to add the Pixate Engine module into your project, or just edit the tiapp.xml file directly and add this to your  section:</p>
+<p>You can use the Ti Studio interface to add the Pixate module into your project, or just edit the tiapp.xml file directly and add this to your  section:</p>
 
-<pre><code>&lt;module platform="iphone"&gt;com.pixate.pxengine&lt;/module&gt;
+<pre><code>&lt;module platform="iphone"&gt;com.pixate.framework&lt;/module&gt;
 </code></pre>
 
 <h2>
-<a name="adding-pixate-engine-runtime--license-properties" class="anchor" href="#adding-pixate-engine-runtime--license-properties"><span class="octicon octicon-link"></span></a>Adding Pixate Engine Runtime &amp; License Properties</h2>
+<a name="adding-the-pixate-runtime--license-properties" class="anchor" href="#adding-the-pixate-runtime--license-properties"><span class="octicon octicon-link"></span></a>Adding the Pixate Runtime &amp; License Properties</h2>
 
-<p>If you are using the <strong>Non-Commercial</strong> version of Pixate Engine, add the following to your <strong>tiapp.xml</strong> file anywhere as a child of the root node:</p>
-
-<pre><code>&lt;ios&gt;
-    &lt;plist&gt;
-        &lt;dict&gt;
-            &lt;key&gt;PXTitanium&lt;/key&gt;
-            &lt;true/&gt;
-        &lt;/dict&gt;
-    &lt;/plist&gt;
-&lt;/ios&gt;
-</code></pre>
-
-<p>If you have a license <strong>username</strong> and <strong>key</strong>, then you'll need two additional entries as follows:</p>
+<p>Once you acquired your free license key from <a href="http://download.pixate.com/key">Pixate</a>, you'll need two additional entries in your tipapp.xml, as follows.</p>
 
 <pre><code>&lt;ios&gt;
     &lt;plist&gt;
@@ -84,7 +72,7 @@
 &lt;/ios&gt;
 </code></pre>
 
-<p>Be sure to substitute <strong>LICENSE USERNAME</strong> and <strong>LICENSE KEY</strong> with the information you received from the Pixate store.</p>
+<p>Be sure to substitute <strong>LICENSE USERNAME</strong> and <strong>LICENSE KEY</strong> with the information you received from Pixate.</p>
 
 <h2>
 <a name="styling-your-controls" class="anchor" href="#styling-your-controls"><span class="octicon octicon-link"></span></a>Styling your Controls</h2>
@@ -205,10 +193,10 @@ self.add(button2);
 <h2>
 <a name="build-instructions" class="anchor" href="#build-instructions"><span class="octicon octicon-link"></span></a>Build Instructions</h2>
 
-<p>If you'd like to build the module yourself, this is the simple process. After cloning this project, start by creating a symbolic link to the PXEngine file from your Pixate distribution in the PXEngine folder. For example:</p>
+<p>If you'd like to build the module yourself, this is the simple process. After cloning this project, start by creating a symbolic link to the Pixate file from your Pixate distribution in the Pixate folder. For example:</p>
 
-<pre><code>cd PXEngine
-ln -s ~/Desktop/Pixate/Framework/PXEngine.framework ./PXEngine.framework
+<pre><code>cd Pixate
+ln -s ~/Desktop/Pixate/Framework/Pixate.framework ./Pixate.framework
 </code></pre>
 
 <p>Now just run build.py:</p>
@@ -216,19 +204,19 @@ ln -s ~/Desktop/Pixate/Framework/PXEngine.framework ./PXEngine.framework
 <pre><code>./build.py
 </code></pre>
 
-<p>The resulting zip file can found in the PXEngine directory.</p>
+<p>The resulting zip file can found in the Pixate directory.</p>
 
 <h3>
 <a name="common-build-errors" class="anchor" href="#common-build-errors"><span class="octicon octicon-link"></span></a>Common Build errors</h3>
 
 <ul>
-<li>If you see an error that 'PXEngine/PXEngine.h' could not be found, then you may be missing the symbolic link to PXEngine.framework or it may be pointing to an invalid location. This will also show as an error coming from CompileC</li>
+<li>If you see an error that 'Pixate/Pixate.h' could not be found, then you may be missing the symbolic link to Pixate.framework or it may be pointing to an invalid location. This will also show as an error coming from CompileC</li>
 <li>If you see an error about a missing "tools" module, then your TITANIUM_SDK environment variable may not be pointing to your Titanium installation. You can update the SDK path and version in the titanium.xcconfig file. Be sure to verify if your SDK has been installed in /Library/... versus ~/Library and update TITANIUM_SDK accordingly.</li>
 <li>Xcode may need to be closed if you encounter CompileC errors</li>
 </ul><h2>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
 
-<p>License for the included source is available in the accompanying <a href="https://github.com/Pixate/Titanium-Pixate/blob/master/PXEngine/LICENSE">LICENSE</a> file.</p>
+<p>License for the included source is available in the accompanying <a href="https://github.com/Pixate/Titanium-Pixate/blob/master/Pixate/LICENSE">LICENSE</a> file.</p>
       </section>
     </div>
 
